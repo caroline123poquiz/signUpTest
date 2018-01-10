@@ -36,7 +36,6 @@ public class TestSignUp {
 
 	private static void processRegistration(WebDriver driver, String emailAdd, String password) {
 		//enter the url 
-		driver.manage().window().maximize();
 		driver.get("https://wooow.hooq.tv/welcome");
 
 		try{
@@ -86,6 +85,7 @@ public class TestSignUp {
 					Thread.sleep(4000);
 					//search for hooq's email and open it
 					driver.findElement(By.id("gbqfq")).sendKeys("HOOQ - Your verification code");
+					Thread.sleep(4000);
 					driver.findElement(By.id("gbqfb")).click();
 
 					List<WebElement> unreadEmail = driver.findElements(By.xpath("//*[@class='zF']"));
@@ -140,7 +140,7 @@ public class TestSignUp {
 	private static Map<String,String> generateEmails() {
 		Map<String, String> emailLoginMap = new HashMap<>();
 		emailLoginMap.put("trmr999005@gmail.com", "password@1");
-		emailLoginMap.put("trmr999006@gmail.com", "password@1");
+		emailLoginMap.put("trmr999006@gmail.com", "password@1");	
 		return emailLoginMap;
 	}
 
